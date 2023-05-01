@@ -1,0 +1,39 @@
+.reviews {
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax((min(21.25rem, 100%)), 1fr));
+    gap: 1rem;
+  }
+
+  &__item {
+    border: 1px solid $text-black;
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include mobile () {
+      padding: 40px 30px;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 12px;
+    width: 30px;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

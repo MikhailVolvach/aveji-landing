@@ -1,0 +1,56 @@
+.about {
+  &__wrap {
+    row-gap: 44px;
+  }
+
+  &__title {
+    &--desktop {
+      @include for-desktop () {
+        font-size: 3rem;
+        line-height: 137.5%;
+        grid-column: 1/8;
+        grid-row: 1/2;
+      }
+
+      @include tablet () {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include for-desktop () {
+        display: none;
+      }
+
+      @include tablet () {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include for-desktop () {
+      grid-column: 10/16;
+      grid-row: 1/2;
+    }
+
+    @include tablet () {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include for-desktop () {
+      grid-column: 10/16;
+      grid-row: 2/3;
+    }
+  }
+}

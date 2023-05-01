@@ -1,0 +1,108 @@
+.projects {
+  &__container {
+
+    @media screen and (min-width: 20rem) {
+      margin-top: 1.25rem;
+      width: auto;
+      margin-left: max(0.938rem, (100% - 86rem) / 2);
+    }
+
+    @media screen and (min-width: 48rem){
+      margin-top: 2rem;
+      margin-left: auto;
+    }
+  }
+
+  &__title {
+  }
+
+  &__list {
+    @media screen and (min-width: 20rem) {
+      gap: 1.25rem;
+      display: flex;
+      align-items: stretch;
+      scroll-padding: 1.25rem;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+
+    @media screen and (min-width: 48rem) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(21.5rem, 1fr));
+    }
+
+  }
+
+  &__item {
+    @media screen and (min-width: 20rem) {
+      overflow: hidden;
+      width: 70%;
+      position: relative;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+
+    @media screen and (min-width: 48rem) {
+      width: auto;
+
+      &:hover {
+        .projects__description {
+          bottom: 0;
+        }
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transform: scale(1);
+      transition: transform .3s;
+    }
+  }
+
+  &__description {
+    @media screen and (min-width: 20rem) {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 66px;
+      background: rgba(33, 37, 41, .5);
+      width: 100%;
+      bottom: 0;
+      padding: 0 1.25rem;
+      transition: all .3s;
+    }
+
+    @media screen and (min-width: 48rem) {
+      bottom: -66px;
+    }
+  }
+
+  &__text {
+    color: #fff !important;
+  }
+
+  &__icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}

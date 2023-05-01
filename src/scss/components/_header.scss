@@ -1,0 +1,59 @@
+.header {
+  padding-top: 0.75rem;
+
+  &__wrap {
+    @include tablet() {
+      display: block !important;
+    }
+  }
+
+  &__logo {
+    @include for-desktop() {
+      grid-column-start: 1;
+    }
+
+    @media screen and (min-width: 20rem) {
+      display: inline-block;
+      width: 2.5rem;
+    }
+  }
+
+  &__nav {
+    @include for-desktop() {
+      grid-column-start: 13;
+    }
+
+    @include tablet() {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include for-desktop() {
+      grid-column-start: 16;
+      grid-column-end: 19;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    @include tablet() {
+      display: none;
+    }
+  }
+
+  .header__burger {
+    @include tablet() {
+      display: block;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}

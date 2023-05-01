@@ -1,0 +1,62 @@
+.algorithm {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    @include for-desktop () {
+      grid-column: 10/19;
+    }
+
+    @include tablet () {
+      margin-top: 20px;
+      gap: 28px;
+    }
+  }
+
+  &__title {
+    @include for-desktop () {
+      grid-column: 1/10;
+    }
+  }
+
+  &__subtitle {
+    max-width: 325px;
+  }
+
+  &__tasks {
+    @media screen and (min-width: 20rem) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    @media screen and (min-width: 48rem) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(21.5rem, 1fr));
+      gap: 1.25rem;
+    }
+
+    @media screen and (min-width: 78.75rem) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+}
+
+.task {
+  border-bottom: 1px solid $text-black;
+  padding-bottom: 1.25rem;
+  &__text {
+    @include for-desktop () {
+      grid-column: 4/7;
+    }
+  }
+
+  &__title {
+    @include for-desktop () {
+      grid-column: 1/4;
+    }
+  }
+}

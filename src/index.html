@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+  @include('partials/head.html')
 
-@include('partials/head.html')
-
-<body class="page__body">
-  <div class="site-container">
-    @include('partials/header.html')
-    <main class="main">
-      <picture>
-        <source srcset="img/cover.webp" type="image/webp">
-        <img loading="lazy" src="img/cover.jpg" class="image" width="300" height="300" alt="Обложка канала MaxGraph">
-      </picture>
-    </main>
-    @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
-  </div>
-</body>
-
+  <body class="page__body">
+    <div class="site-container">
+      <div class="content">
+        @include('partials/header.html')
+        <main class="main">
+          @include('partials/intro.html')
+          @include('partials/about.html')
+          @include('partials/algorithm.html')
+          @include('partials/projects.html')
+          @include('partials/reviews.html')
+          @include('partials/feedback.html')
+        </main>
+        <div class="menu" data-menu>
+          <div class="overlay" data-menu-overlay></div>
+          <div class="menu__content">
+            <div class="container">
+              <div class="menu__wrap">
+                <a href="index.html" class="menu__logo"
+                  ><img src="./img/logo.png" alt=""
+                /></a>
+                <ul class="menu__list">
+                  <li class="menu__item" data-menu-item>
+                    <a href="#about" class="menu__link link">О нас</a>
+                  </li>
+                  <li class="menu__item" data-menu-item>
+                    <a href="#projects" class="menu__link link">Проекты</a>
+                  </li>
+                  <li class="menu__item" data-menu-item>
+                    <a href="#" class="menu__link link">Материалы</a>
+                  </li>
+                  <li class="menu__item" data-menu-item>
+                    <a href="#reviews" class="menu__link link">Отзывы</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      @include('partials/footer.html')
+    </div>
+  </body>
 </html>

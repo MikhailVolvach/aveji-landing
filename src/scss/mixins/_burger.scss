@@ -1,36 +1,48 @@
 /* stylelint-disable */
 
 @mixin burger {
-  --burger-width: 30px;
-  --burger-height: 30px;
-  --burger-line-height: 2px;
+  $burger-width: 30px;
+  $burger-height: 30px;
+  $burger-line-height: 1px;
 
   position: relative;
   border: none;
   padding: 0;
-  width: var(--burger-width);
-  height: var(--burger-height);
   color: #000;
   background-color: transparent;
   cursor: pointer;
 
-  &::before,
-  &::after {
-    content: "";
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $burger-width;
+    height: $burger-height;
+    background-color: #fff;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+  }
+
+  &__line:first-child,
+  &__line:last-child {
     position: absolute;
     left: 0;
     width: 100%;
-    height: var(--burger-line-height);
+    height: $burger-line-height;
     background-color: currentColor;
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 
-  &::before {
+  &__line:first-child {
     top: 0;
   }
 
-  &::after {
-    top: calc(100% - var(--burger-line-height));
+  &__line:last-child {
+    top: calc(100% - $burger-line-height);
+    width: 40%;
+    left: unset;
+    right: 0;
   }
 
   &__line {
@@ -38,26 +50,28 @@
     left: 0;
     top: 50%;
     width: 100%;
-    height: var(--burger-line-height);
+    height: $burger-line-height;
     background-color: currentColor;
     transform: translateY(-50%);
     transition: transform 0.3s ease-in-out;
   }
 
   &--active {
-    &::before {
+    background-color: #fff;
+    border-radius: 50%;
+    .burger__line:first-child {
       top: 50%;
       transform: rotate(45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
 
-    &::after {
+    .burger__line:nth-child(2) {
       top: 50%;
       transform: rotate(-45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     }
 
-    .burger__line {
+    .burger__line:last-child {
       transform: scale(0);
       transition: transform 0.3s ease-in-out;
     }
